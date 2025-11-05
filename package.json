@@ -1,0 +1,23 @@
+{
+  "name": "brc-100-payments",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sirdeggen/brc-100-payments.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sirdeggen/brc-100-payments/issues"
+  },
+  "homepage": "https://github.com/sirdeggen/brc-100-payments#readme",
+  "dependencies": {
+    "@bsv/message-box-client": "^1.4.3",
+    "@bsv/sdk": "^1.8.11"
+  }
+}
