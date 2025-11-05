@@ -179,14 +179,24 @@ async function getAddress(wallet: WalletClient) {
 }
 
 // run something
-async function main() {
+async function main(step: string) {
     const wallet = new WalletClient('json-api', 'deggen.com')
     
-    await getAddress(wallet)
-    // await internalizeATransaction(wallet, 'e6dac127847e5adfe220a0fa52514c482639abacfb8f9b112d197a0d5d39db3c')
-    // await createOutboundTxToIdentity(wallet, 'test@deggen.com', 1000)
-    // await acceptIdentityBasedPayment(wallet)
+    switch (step) {
+        case '1':
+            await getAddress(wallet)
+            break
+        case '2':
+            await internalizeATransaction(wallet, process.argv[3])
+            break
+        case '3':
+            await createOutboundTxToIdentity(wallet, process.argv[3], Number(process.argv[4]))
+            break
+        case '4':
+            await acceptIdentityBasedPayment(wallet)
+            break
+    }
 }
 
-main()
+main(process.argv[2])
 
